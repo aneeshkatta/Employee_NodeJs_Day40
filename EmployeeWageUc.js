@@ -35,9 +35,17 @@ while (totalWorkingDays < NO_OF_WORKING_DAYS && totalEmpHrs < MAX_HRS_IN_MONTH) 
     totalWorkingDays++;
 }
 let NetMonthlyWage = CalculateDailyWage(totalEmpHrs, WAGE_PER_HR);
-console.log("Total Working Days: " + totalWorkingDays + " Total Hrs: " + totalEmpHrs + " Employee Wage:" + NetMonthlyWage);
 console.log("printing stored daily wage in array:");
 for (i = 0; i < empDailyWagearr.length; i++)
 {
 console.log((i+1) + ":index " + empDailyWagearr[i]);
 }
+//array helper function
+let totalEmpWage=0;
+function Sum(totalEmpWage,dailywage) {
+   return totalEmpWage+dailywage;
+}
+monthlyWage=empDailyWagearr.reduce(Sum);
+console.log("Total Working Days: " + totalWorkingDays + " Total Hrs: " + totalEmpHrs + " Employee Wage:" + monthlyWage);
+
+
