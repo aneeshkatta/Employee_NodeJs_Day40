@@ -6,7 +6,7 @@ const FULL_TIME_HRS = 8;
 const WAGE_PER_HR = 20;
 const NO_OF_WORKING_DAYS = 20;
 let empDailyWagearr = new Array();
-//uc6-Store the Daily Wage along with the Total Wage - Save in an Array the Daily Wage
+//Show the Day along with Daily Wage using Array map helper function
 function GetEmpHrs(empCheck) {
     switch (empCheck) {
         case IS_FULL_TIME:
@@ -46,6 +46,13 @@ function Sum(totalEmpWage,dailywage) {
    return totalEmpWage+dailywage;
 }
 monthlyWage=empDailyWagearr.reduce(Sum);
-console.log("Total Working Days: " + totalWorkingDays + " Total Hrs: " + totalEmpHrs + " Employee Wage:" + monthlyWage);
-
+console.log("UC_7B :Total Working Days: " + totalWorkingDays + " Total Hrs: " + totalEmpHrs + " Employee Wage:" + monthlyWage);
+//array map helper function
+let dailycounter=0;
+function mapDaywithWage(dailywage) {
+    dailycounter++;
+    return dailycounter+"="+dailywage+"\t";
+}
+let aMapDaywithWage =empDailyWagearr.map(mapDaywithWage)
+console.log("UC_7B: DailyWageMap:\n"+aMapDaywithWage);
 
