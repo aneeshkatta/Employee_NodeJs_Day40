@@ -6,7 +6,7 @@ const FULL_TIME_HRS = 8;
 const WAGE_PER_HR = 20;
 const NO_OF_WORKING_DAYS = 20;
 let empDailyWagearr = new Array();
-//Show the Day along with Daily Wage using Array map helper function
+//Uc_7c Show Days when Full time wage of 160 were earned using filter function
 function GetEmpHrs(empCheck) {
     switch (empCheck) {
         case IS_FULL_TIME:
@@ -51,8 +51,14 @@ console.log("UC_7B :Total Working Days: " + totalWorkingDays + " Total Hrs: " + 
 let dailycounter=0;
 function mapDaywithWage(dailywage) {
     dailycounter++;
-    return dailycounter+"="+dailywage+"\t";
+    return dailycounter+"="+dailywage;
 }
 let aMapDaywithWage =empDailyWagearr.map(mapDaywithWage)
 console.log("UC_7B: DailyWageMap:\n"+aMapDaywithWage);
-
+//filter function
+function FullTimeWage(dailywage) {
+    return dailywage.includes("160");
+}
+let aFullTimeWage=aMapDaywithWage.filter(FullTimeWage);
+console.log("Uc_7c Show Days when Full time wage of 160 were earned using filter function")
+console.log(aFullTimeWage);
