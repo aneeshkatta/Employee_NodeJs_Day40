@@ -37,3 +37,23 @@ while (totalWorkingDays < NO_OF_WORKING_DAYS && totalEmpHrs < MAX_HRS_IN_MONTH) 
     totalWorkingDays++;
 }
 console.log(empDailyWagearrmap);
+// uc-09 Use the Daily Wage Map and  Daily Hour Map perform  following operations using  Arrow Functions
+// a. Calc total Wage and total hours worked
+// b. Show the full workings days, part working days and  no working days
+const Findtotal= (totalvalue,dailyvalue)=>{
+    return totalvalue+dailyvalue
+}
+totalEmpHrs=Array.from(empDailyWagearrmap.values()).reduce(Findtotal,0);
+totalsalary=empDailyWagearr.filter(dailyvalue=>dailyvalue>0).reduce(Findtotal,0);
+console.log("Total-hrs :"+totalEmpHrs+" Total salary :"+totalsalary);
+let  nonWorkingdays=new Array();
+let  PTWorkingdays=new Array();
+let  FTWorkingdays=new Array();
+empDailyWagearrmap.forEach((value,key,map)=>{
+    if((value/WAGE_PER_HR)==8) FTWorkingdays.push(key);
+    else if((value/WAGE_PER_HR)==4) PTWorkingdays.push(key);
+    else nonWorkingdays.push(key);
+});
+console.log("FULL WORKING DAYS:"+FTWorkingdays);
+console.log("PTWorkingdays"+PTWorkingdays);
+console.log("nonWorkingdays"+nonWorkingdays);
