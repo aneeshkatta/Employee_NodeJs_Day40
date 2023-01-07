@@ -36,10 +36,4 @@ while (totalWorkingDays < NO_OF_WORKING_DAYS && totalEmpHrs < MAX_HRS_IN_MONTH) 
     empDailyWagearrmap.set(totalWorkingDays, CalculateDailyWage(empHrs, WAGE_PER_HR));
     totalWorkingDays++;
 }
-
-//console.log(empDailyWagearrmap);
-let res = 0;
-let key =0;
-for (let key of empDailyWagearrmap.keys()) { // the same as of recipeMap.entries()
-    res=res+empDailyWagearrmap[key];
-  } console.log(res); 
+console.log(empDailyWagearrmap);
