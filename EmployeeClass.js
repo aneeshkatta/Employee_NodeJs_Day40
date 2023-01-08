@@ -29,7 +29,6 @@ class EmployeePayrollData{
         return "id="+this.id+", name="+this.name+", salary="+this.salary+", gender="+this.gender+", startDate="+this.startDate;;
     }
 }
-
 let employeePayrollData=new EmployeePayrollData(1,"Ravi",50000,"M",05-05-2022);
 console.log(employeePayrollData.toString());
 try{
