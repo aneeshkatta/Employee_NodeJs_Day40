@@ -20,9 +20,12 @@ class EmployeePayrollData{
     set startDate(startDate)  {this._startDate=startDate;}
     toString()
     {
-        return "id="+this.id+", name="+this.name+", salary="+this.salary+", gender="+this.gender+", startDate="+this.startDate;;
+        const options = { day:'numeric', month:'long', year: 'numeric'};
+        const empdate=this.startDate ===undefined ?"undefined": 
+        this.startDate.toLocaleDateString("en-US",options);
+        return "id="+this.id+", name="+this.name+", salary="+this.salary+", gender="+this.gender+", startDate="+empdate ;
     }
 }
 
-let employeePayrollData=new EmployeePayrollData(1,"ravi",50000,"M",05-05-2022);
-console.log(employeePayrollData.toString());
+let employeePayrollData=new EmployeePayrollData(1,"ravi",50000,"M",new Date());
+console.log(employeePayrollData);
