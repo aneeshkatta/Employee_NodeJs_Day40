@@ -11,7 +11,13 @@ class EmployeePayrollData{
         this.startDate=params[4];
     }
     get name()  {return this._name;}
-    set name(name)  {this._name=name;}
+    set name(name)  {
+        let RegexExpofName= RegExp('^[A-Z]{1}[a-z]{3,}$')
+        if(RegexExpofName.test(name))
+        this._name=name;
+        else throw 'Name is incorrect'
+        
+    }
     get salary()  {return this._salary;}
     set salary(salary)  {this._salary=salary;}
     get gender()  {return this._gender;}
@@ -24,5 +30,12 @@ class EmployeePayrollData{
     }
 }
 
-let employeePayrollData=new EmployeePayrollData(1,"ravi",50000,"M",05-05-2022);
+let employeePayrollData=new EmployeePayrollData(1,"Ravi",50000,"M",05-05-2022);
 console.log(employeePayrollData.toString());
+try{
+let employeePayrollData=new EmployeePayrollData(1,"raju",50000,"M",05-02-2022);
+console.log(employeePayrollData.toString());
+}catch(e)
+{
+    console.error(e);
+}
