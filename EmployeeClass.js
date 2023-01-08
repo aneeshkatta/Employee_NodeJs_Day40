@@ -16,7 +16,7 @@ class EmployeePayrollData{
 }
 
 let employeePayrollData=new EmployeePayrollData(1,"ravi",50000);
-console.log(employeePayrollData);
+console.log(employeePayrollData.toString());
 employeePayrollData.name="ram";
 employeePayrollData.salary=500000;
-console.log(employeePayrollData);
+console.log(employeePayrollData.toString());
