@@ -69,5 +69,9 @@ while (totalWorkingDays < NO_OF_WORKING_DAYS && totalEmpHrs < MAX_HRS_IN_MONTH) 
         },});
         totalWorkingDays++;
 }
-console.log(empDyHrDailyWagearr);
-
+//console.log(empDyHrDailyWagearr);
+//UC11 -> Perform following Object operations using Arrow Functions.
+//11a. Calc total Wage and total hours worked
+let totalWages=empDyHrDailyWagearr.filter(dailyHrsAndWage => dailyHrsAndWage.Day_wage > 0).reduce((totalwage,dailyHrsAndWage) => totalwage+=dailyHrsAndWage.Day_wage,0);
+let OverallWorkingHours=empDyHrDailyWagearr.filter(dailyHrsAndWage => dailyHrsAndWage.empHrs >0).reduce((totalhrs,dailyHrsAndWage) => totalhrs+=dailyHrsAndWage.empHrs,0);
+console.log("UC 11A - Overall Total Working Hours :"+OverallWorkingHours+" Overall Total Employee Wage : "+totalWages);
