@@ -75,3 +75,14 @@ while (totalWorkingDays < NO_OF_WORKING_DAYS && totalEmpHrs < MAX_HRS_IN_MONTH) 
 let totalWages=empDyHrDailyWagearr.filter(dailyHrsAndWage => dailyHrsAndWage.Day_wage > 0).reduce((totalwage,dailyHrsAndWage) => totalwage+=dailyHrsAndWage.Day_wage,0);
 let OverallWorkingHours=empDyHrDailyWagearr.filter(dailyHrsAndWage => dailyHrsAndWage.empHrs >0).reduce((totalhrs,dailyHrsAndWage) => totalhrs+=dailyHrsAndWage.empHrs,0);
 console.log("UC 11A - Overall Total Working Hours :"+OverallWorkingHours+" Overall Total Employee Wage : "+totalWages);
+//11b. Show the full workings days using foreach
+let fullTimeWorkingdays=empDyHrDailyWagearr.filter(dailyHrsAndWage => dailyHrsAndWage.empHrs == 8).map(dailyHrsAndWage => dailyHrsAndWage.totalWorkingDays);
+console.log("UC 11B - Full Time Working days are: "+fullTimeWorkingdays);
+
+//11c. Show Part working days using Map by reducing to String Array
+let partTimeWorkingDays=empDyHrDailyWagearr.filter(dailyHrsAndWage => dailyHrsAndWage.empHrs == 4).map(dailyHrsAndWage => dailyHrsAndWage.totalWorkingDays);
+console.log("UC 11C - Part Time Working days are: "+ partTimeWorkingDays);
+
+//11d. No working days only using Map function
+let nonWorkingDays=empDyHrDailyWagearr.filter(dailyHrsAndWage => dailyHrsAndWage.empHrs == 0).map(dailyHrsAndWage => dailyHrsAndWage.totalWorkingDays);
+console.log("UC 11D - Non working days are :"+nonWorkingDays)
