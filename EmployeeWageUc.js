@@ -63,10 +63,11 @@ totalWorkingDays = 0;
 let empDyHrDailyWagearr = new Array();
 while (totalWorkingDays < NO_OF_WORKING_DAYS && totalEmpHrs < MAX_HRS_IN_MONTH) {
     let empCheck = Math.floor(Math.random() * 10) % 3;
-    empDailyWagearr.push({
+    empDyHrDailyWagearr.push({
         totalWorkingDays, empHrs : GetEmpHrs(empCheck), Day_wage:CalculateDailyWage(empHrs, WAGE_PER_HR), toString() {
             return "Day:" + totalWorkingDays + "Emp Hrs:" + empHrs + "Emp Daily Wage:" + Day_wage;
         },});
         totalWorkingDays++;
 }
-console.log(empDailyWagearr);
+console.log(empDyHrDailyWagearr);
+
